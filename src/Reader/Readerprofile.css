@@ -1,0 +1,13 @@
+.container_readerprofile{
+    display: flex;
+    padding-left: 30px;
+    padding-right: 50px;
+    /* justify-content:space-between; */
+}
+.Readerprofilesidebar {
+    width: 30%;
+  }
+  
+  .Readerprofileaccountinfo {
+    width: 79%;
+  }

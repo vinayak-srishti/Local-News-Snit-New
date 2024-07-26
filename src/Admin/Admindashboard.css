@@ -1,0 +1,66 @@
+.admin_dashboard{
+    padding: 20px;
+}
+.admindashboard_h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+.admin_dashboard_box{
+    width: 200px;
+    height: 150px;
+    background-color: rgb(218, 216, 216);
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+}
+#count{
+    text-align: center;
+}
+.admindashboard_users{
+    padding-left: 10px;
+    width: 870px;
+    height: 60px;
+    background-color:rgb(218, 216, 216) ;
+    border-radius: 20px;
+
+}
+.admindashboard_users p{
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.admindashboard_users_list{
+    margin-top: 20px;
+    padding-left: 10px;
+    width: 870px;
+    height: 60px;
+    background-color:rgb(218, 216, 216) ;
+    border-radius: 20px;
+
+}
+.admindashboard_users_list p{
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 600;
+
+}
+.admin_dashboard_search input{
+    width: 240px;
+    height: 40px;
+    border: 2px solid black;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+.admin_dashboard_search ::placeholder{
+    color: black;
+    padding-left: 10px;
+}
+.admin_dashboard_search button{
+    width: 200px;
+    height: 40px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.viewservices_search{
+    margin-left: -110px;
+}

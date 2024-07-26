@@ -1,0 +1,43 @@
+.readerCar{
+    /* height: auto; */
+    /* width: 100%; */
+    margin: 30px;
+}
+
+.reader-carousel2-heading h4{
+    padding: 30px;
+    font-weight: 800;
+    font-size: 25px;
+}
+.reader-carousel2-box {
+    margin: 10px;
+    margin-left: 40px;
+    width: 300px;
+    /* height: auto; */
+    overflow: hidden;
+    height: 370px;
+    background-color: rgb(174, 181, 181);
+    border-radius: 20px;
+}
+.reader-carousel2-box p{
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 10px;
+    white-space: normal; 
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-width: 100%;
+
+}
+.reader-carousel2-pro{
+    padding-top: 60px;
+}
+#span1{
+    padding-left: 20px;
+}
+#span2{
+    padding-left: 100px;
+}

@@ -1,0 +1,19 @@
+    .singlecontributer-main{
+        width: 500px;
+        max-height: 800px;
+        background-color: aquamarine;
+        margin: 20px;
+        margin-left: 200px;
+        border-radius: 12px;
+        padding: 20px;
+    }
+    .singlecontributer-button{
+        margin-left: 120px;
+    }
+    .singlecontributer-main input{
+        width: 300px;
+        height: 40px;
+        border: 2px solid black;
+        border-radius: 12px;
+        margin: 5px;
+    }

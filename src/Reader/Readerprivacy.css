@@ -1,0 +1,15 @@
+.reader_privacytext{
+    padding: 30px 0px 0px 40px;
+
+}
+.reader_privacytext h2{
+    font-weight: bold;
+}
+.reader_privacytext p{
+    padding-top: 20px;
+    font-size: large;
+    font-weight: 500;
+}
+.reader_privacytext h3{
+    font-weight:600;
+}

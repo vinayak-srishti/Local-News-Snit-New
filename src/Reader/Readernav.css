@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+  }
+  
+  .user_navbar{
+    width: 100%;
+    height: 100px;
+    background-color: #d4cecea6;
+    
+  }
+
+  .user_nav_margin{
+  margin-left:50px;
+  font-family: 'Courier New', Courier, monospace;
+  color: black;
+  }
+  .user_nav_Search{
+   justify-content: center;
+    width:400px;
+    border:10px;
+    margin-right:50px;
+   
+  }
+  .user_navbar_items{
+    display: flex;
+    justify-content: end;
+    
+  }
+  .userpage_navbar_loginbtn{
+  
+  width: 66px;
+  height:32px;
+  border: 1px solid #000;
+  border-radius: 12px;
+  padding: 2px;
+  background:transparent;
+  }
+  

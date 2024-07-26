@@ -1,0 +1,56 @@
+.main_class{
+    width: 100%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    padding-left: 4%; /* Adjust the left padding as needed */
+    padding-right: 4%;
+    border-radius: 4px;
+}
+.breaking_head{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 60px;
+    font-size: 30px;
+    
+}
+.carousel-inner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 70%; /* Adjust this value to control the width of the black shade */
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.879) 100%);
+    z-index: 1;
+  }
+.carousel-inner {
+    height: 600px;
+}
+
+.carousel-item img {
+    height: 100%; 
+}
+.carousel_button{
+    text-align: center;
+    height: 30px;
+    background-color: rgba(0, 255, 255, 0);
+    color: whitesmoke;
+    font-size: medium;
+    line-height: 1; 
+    overflow: hidden; 
+    border-radius: 4px;
+    border-color:  white;
+    background-color: rgba(0, 0, 0, 0.628);
+}
+
+.carousel-caption{
+    white-space: nowrap;
+    color: rgb(176, 173, 173);
+    padding-bottom: 250px;
+    padding-left: 500px;
+    font-size: 50px;
+    font-weight:bolder;
+    line-height: 60px;
+    /* position: relative; */
+  z-index: 2;
+}

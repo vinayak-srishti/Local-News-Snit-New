@@ -1,0 +1,26 @@
+.viewonenews{
+    padding: 20px;
+}
+
+
+.reader_viewone_image {
+    padding-top: 40px;
+    padding-left: 100px;
+ width: 100%;
+ height: 600px;
+}
+.reader_viewone-title h2{
+    padding-top: 30px;
+   padding-left: 130px;
+   font-weight: bold;
+}
+.reader_viewone-text p{
+    padding-top: 30px;
+   padding-left: 130px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+}
+.reader_viewone-likesdislikes{
+    padding-left: 100px;
+}

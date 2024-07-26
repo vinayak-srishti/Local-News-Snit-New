@@ -1,0 +1,24 @@
+.comments-main-head{
+    padding-top: 20px;
+}
+.comments-main-content{
+    padding-top: 30px;
+}
+.textarea-commetn textarea{
+    width: 970px;
+    height: 80px;
+}
+.textarea-commetn-img img{
+    margin-top: 20px;
+    /* border-radius: 50%; */
+}
+.comment-box{
+    max-width: 1100px;
+    height: fit-content;
+    background-color:rgb(168, 169, 169);
+    border-radius: 20px;
+}
+.comment-content {
+    width: 1100px; /* Set your desired width here */
+    word-wrap: break-word; /* This will allow long words to break and wrap onto the next line */
+  }

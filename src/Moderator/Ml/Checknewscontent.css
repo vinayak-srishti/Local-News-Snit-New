@@ -1,0 +1,38 @@
+.checknews-contentmain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.checknews-contentbox{
+    width: 500px;
+    height: 400px;
+    background-color: rgb(129, 196, 196);
+    border-radius: 12px;
+}
+.checknews-contentbox h3{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-top: 10px;
+    
+}
+.checknews-contentbox hr{
+    height: 3px;
+}
+.checknews-contentbox p{
+    text-align: center;
+    font-size: 22px;
+}
+.checknews-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+.checknews-button button{
+    height: 40px;
+    background-color: rgb(38, 98, 78);
+    border-radius: 20px;
+    color:white;
+    font-weight: 600;
+    border: none;
+}

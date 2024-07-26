@@ -1,0 +1,126 @@
+.reader_home3{
+    padding: 20px;
+    /* padding-top: 30px;
+    padding-bottom: 20px; */
+}
+/* .reader_home3-one{
+    margin: 20px;
+} */
+.reader_home3 h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+.reader_home3_phone{
+    margin-left: 40px;
+    width: 320px;
+    height: 550px;
+    border: 12px solid rgba(0, 0, 0, 0.573);
+    border-radius: 20px;
+    background-color: rgb(220, 217, 217);
+    
+    /* border-top-right-radius: 12px; */
+}
+.reader_smbox{
+    width: 130px;
+    height: 25px;
+    background-color: black;
+    margin-left: 130px;
+    /* margin-top: -.2cm; */
+   text-align: center;
+   color: white;
+   /* border-radius: 7px; */
+   border-bottom-right-radius: 12px;
+   border-bottom-left-radius: 12px;
+}
+.reader-image img{
+    padding-top: 10px;
+    padding-left: 18px;
+    /* margin-left: 4px; */
+}
+.readre-box-under{
+    width: 347px;
+    height: 100px;
+    background-color: rgb(249, 255, 255);
+    margin-left: 20px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.readre-box-under h6{
+    font-size:16px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    white-space: normal; 
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-width: 100%;
+  /* white-space: nowrap; three dot when content increases  */
+ 
+}
+#reader-user{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+#reader-dte{
+    padding-left: 150px;
+}
+.readre-box-below{
+    width: 285px;
+    height: 245px;
+    background-color: rgb(249, 255, 255);
+    margin: 6px;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+}
+.backbround-img{
+    background-image: url("../Assets//Rectangle21.png");
+    background-repeat: no-repeat;
+    /* background-size: 100%; */
+    height: 660px;
+    width: 390px;
+    margin-left: 30px;
+    background-color: rgb(173, 176, 180);
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+}
+.readre-box-under1{
+    width: 347px;
+    height: 80px;
+    background-color: rgb(249, 255, 255);
+    margin: 6px;
+    margin-left: 20px;
+    border-radius: 12px;
+    /* border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px; */
+
+}
+.readre-box-under1 img{
+    padding-bottom: 20px;
+    margin-left: -10px;
+}
+.readre-box-under1 p{
+    padding-left: 120px;
+    margin-top: -80px;
+    
+}
+#reader-user1{
+    /* margin-top: px; */
+    margin-left: 120px;
+}
+#reader-dte1{
+    padding-left: 60px;
+}
+.truncate-text {
+    font-size: large;
+    font-weight: 600;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }

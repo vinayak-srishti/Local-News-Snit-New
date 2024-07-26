@@ -1,0 +1,46 @@
+.addupload_image img{
+    width: 260px;
+    height: 180px;
+    border-top-left-radius: 15px;
+}
+/* .add_rows{
+    display: flex;
+    align-items: center;
+}
+.add_rows h2{
+    margin-right: auto;
+
+} */
+
+.addupload_box{
+    width: 260px;
+    height: 100px;
+    background-color: rgb(183, 181, 180);
+    padding-left: 10px;
+    overflow: hidden;
+    /* border-bottom-left-radius: 12px; */
+    border-bottom-right-radius: 15px;
+    
+}
+.addupload_main_padding{
+    padding: 10px;
+  
+}
+.addupload_main_paddings{
+    display: flex;
+    flex-wrap: wrap;
+}
+.add_addnew{
+    /* width: 10px; */
+    height: 30px;
+    background-color: rgb(183, 181, 180);
+    border-radius: 20px;
+text-align: center;
+}
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+  }
+  

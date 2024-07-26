@@ -1,0 +1,49 @@
+.reader_login{
+    font-family: "Poppins", sans-serif;
+    padding: 20px 0;
+}
+.reader_login_title{
+    text-align: center;
+    margin-top: 30PX;
+    font-weight: 600;
+}
+
+.reader_login_inp{
+    text-align: center;
+}
+.forget_login{
+    padding-left: 100px;
+}
+.login_button{
+   width: 100px;
+   color: black;
+}
+.reader_box{
+    width: 50%;
+    margin: auto;
+}
+.input_text{
+    /* margin-left: 530px; */
+    margin-top: 30px;
+
+}
+.input_text [type="text"]{
+    height: 45px;
+    width: 250px;
+    border: 2.5px solid #000;
+    border-radius: 4px;
+    padding: 10px;
+    
+}
+.input_text [type="password"]{
+    height: 45px;
+    width: 250px;
+    border: 2.5px solid #000;
+    border-radius: 4px;
+    padding: 10px;
+
+}
+.input_text input::placeholder {
+    color: black;
+  }
+ 

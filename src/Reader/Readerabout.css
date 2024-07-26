@@ -1,0 +1,16 @@
+.reader_about{
+    padding: 20px 0 0 ;
+    padding-left: 50px;
+}
+.reader_about h2{
+font-weight: bold;
+}
+.reader_about p{
+    font-size: 20px;
+    font-weight: 500;
+}
+.reader_about_list li{
+    font-size: 20px;
+    font-weight: 500;
+
+}

@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+.main-margin{
+    padding: 0;
+    margin: 0;
+}
+.user_navbar {
+    width: 100%; 
+    height: 90px;
+    background-color: #d4cecea6;
+}
+
+
+.select{
+    padding-top: 10px;
+    border: none;
+}
+.button_login{
+    padding-top: 5px;
+    
+}
+.borderbutton{
+    border-radius: 12px;
+    width: 80px;
+}
+.search_input{
+    border-radius: 12px;
+    width: 250px;
+    padding-top: 5px;
+}
+.nav_items{
+    padding-top: 45px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+/* .navigation{
+    margin-left: 10px;
+} */
+.navigation-first{
+    margin-left: 600px;
+}

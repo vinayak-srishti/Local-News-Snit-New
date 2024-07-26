@@ -1,0 +1,57 @@
+.reader_pageroles{
+    min-height: 790px;
+    /* width: 69%; */
+    background-color: white;
+    /* margin-left: 5%; */
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+.reader_pagerole_title{
+    color: #110422;
+    padding: 30px;
+    font-family: Poppins;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+    padding-left: 30px;
+}
+.reader_pageroles_box{
+    width: 350px;
+    height: 450px;
+    background-color: #9c99a0db;
+    border: 7px solid black;
+    border-radius: 30px;
+    margin-left: 100px;
+    
+}
+.reader_pageroles_box h4{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+.reader_pageroles_box p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: normal;
+    padding-top: 20px;
+    padding-left: 30px;
+}
+/* .reader_pageroles_boxsec{
+    width: 300px;
+    height: 450px;
+    background-color: #9c99a0db;
+    border: 7px solid black;
+    border-radius: 10px;
+    
+} */
+.reader_pagerole_regbuttonone button{
+    color: black;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-left: 250px;
+}

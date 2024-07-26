@@ -1,0 +1,32 @@
+.adminviews h3{
+    padding: 20px ;
+    font-style: inherit;
+    font-size:xx-large;
+    font-weight: bolder;
+}
+.adminview_sinleuser_box{
+    width: 100%;
+    min-height: 560px;
+    background-color:rgba(110, 102, 102, 0.486);
+    margin: 10px;
+    border-radius: 10px;
+}
+.adminview_sinleuser h4{
+    font-style: inherit;
+    font-size:xx-large;
+    font-weight: bold;
+    padding: 20px 30px;
+}
+.admin_viewsingleuser_image{
+    padding-left: 300px;
+    padding-top: -2cm;
+}
+.admin_viewuser_image{
+    width: 300px;
+    padding-top: 20px;
+}
+.admin_viewuser_button{
+    padding-left: 150px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

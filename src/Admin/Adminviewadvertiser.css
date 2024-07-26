@@ -1,0 +1,32 @@
+.admin_viewadvertiser{
+    padding: 20px;
+}
+.admin_viewadvertiser_box{
+    margin-top: 20px;
+    /* padding-left: 10px; */
+    width: 900px;
+    height: 60px;
+    background-color:rgb(218, 216, 216) ;
+    border-radius: 20px;
+
+}
+.admin_viewadvertiser_box p{
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+.adminadvertiser_view_req{
+    margin-left: 250px;
+    width: 190px;
+    height: 40px;
+    background-color:rgb(218, 216, 216) ;
+    border-radius: 20px;
+}
+#request{
+    text-align: center;
+    padding-top: 5px;
+    font-size: large;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+

@@ -1,0 +1,32 @@
+.reader_politics h1{
+    padding: 20px;
+    font-weight: 700;
+}
+.reader_politics_text h2{
+    font-weight: bold;
+}
+.reader_politics_text p{
+    font-size: 22px;
+    font-weight: 400;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.readmorebtn{
+    color: blue;
+    background-color: rgba(240, 248, 255, 0);
+    border-color: rgba(255, 255, 255, 0);
+}
+#reader_usename{
+    background-color: rgba(240, 248, 255, 0);
+    border-color: rgba(255, 255, 255, 0);
+    padding-left: 250px;
+}
+#reader_location{
+    background-color: rgba(240, 248, 255, 0);
+    border-color: rgba(255, 255, 255, 0);
+
+}
+#reader_time{
+    background-color: rgba(240, 248, 255, 0);
+    border-color: rgba(255, 255, 255, 0);
+
+}

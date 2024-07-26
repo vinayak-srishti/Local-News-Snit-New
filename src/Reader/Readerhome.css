@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+}
+.pclass{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: medium;
+    padding-top: 30px;
+}
+/* body{
+    padding: 0%;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    color: black;
+} */
+.carousel_heading{
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+#carouselExampleControls{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+.user_trendingNew{
+    background-color:#faf7f7;
+    padding:15px;
+    margin: 0%;
+    border: none;
+    border-radius: 10px;
+}
+.user_trendingNews_content{
+    padding-top: 15px;
+    margin: 0%;
+}
+.user_trendingNews_bg{
+    background-color: #d7d7d8;
+    
+   border-radius: 15px;
+   padding: 20px;
+}

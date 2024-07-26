@@ -1,0 +1,43 @@
+.viewsubscription-head h3{
+    font-size: 25px;
+    font-weight: bold;
+}
+.add-new-box{
+    width: 150px;
+    height: 40px;
+    background-color: rgb(158, 164, 162);
+    text-align: center;
+    border-radius: 22px;
+    padding-top: 6px;
+}
+.add-new-box span{
+    font-size: large;
+    font-weight: 700;
+   
+}
+.viewsubscription-table{
+    padding: 20px;
+    margin-top: 20PX;
+    border-top-left-radius: 20PX;
+    border-top-right-radius: 20PX;
+    background-color: rgb(170, 180, 180);
+}
+.viewsubscription-table p{
+    font-size: 20px;
+    font-weight: 600;
+}
+.viewsubscription-table-bottom{
+    margin-top: 10px;
+    /* border-bottom-left-radius: 20PX;
+    border-bottom-right-radius: 20PX; */
+    background-color: rgb(170, 180, 180);
+}
+.viewsubscription-table-bottom button{
+    border-radius: 20px;
+}
+.viewsubscription-table-bottoms{
+    margin-top: 10px;
+    border-bottom-left-radius: 20PX;
+    border-bottom-right-radius: 20PX;
+    background-color: rgb(170, 180, 180);
+}

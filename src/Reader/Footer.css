@@ -1,0 +1,26 @@
+.footer_reader_main{
+    background-color: black;
+    min-height: 200px;
+    width: 100%;
+    color: white;
+}
+.footer_reader {
+    padding: 40px;
+}
+.footer_reader p {
+    font-size: 13px;
+    margin: 3px 0;
+  }
+  hr{
+border-width: 2px;
+color: white;
+  }
+  .footer_reader_text{
+    h3{
+        padding: 30px;
+    }
+  }
+
+  .imageinstagram{
+    /* border-radius: 100px; */
+  }

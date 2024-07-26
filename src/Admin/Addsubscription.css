@@ -1,0 +1,63 @@
+.add-subscription-main{
+    padding: 20px;
+}
+.add-subscription-back{
+    width: 100px;
+    height: 40px;
+    background-color: rgb(158, 164, 162);
+    text-align: center;
+    border-radius: 22px;
+    padding-top: 6px;
+
+}
+.add-subscription-head{
+    font-size: 25px;
+    font-weight: bold;
+}
+.add-subscription-title{
+    padding: 20px;
+}
+.add-subscription-title label{
+    font-size: 20px;
+    font-weight: 600;
+}
+#title{
+    margin-left: 70px;
+}
+.add-subscription-title input{
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 12px;
+}
+.add-subscription-title textarea{
+     padding-top: 20px; 
+     border: 2px solid black;
+    border-radius: 12px;  
+}
+#features{
+    margin-left: 35px;
+}
+.add-subscription-features{
+    padding-top: 20px;
+}
+.add-subscription-select{
+    height: 50px;
+    width: 100px;
+    border: 2px solid black;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+#price{
+    margin-left: 70px;
+    margin-top: 20px;
+
+}
+#duration{
+    margin-left: 35px;
+ 
+}
+.add-subscription button{
+    width: 120px;
+    margin: 20px;
+    margin-left: 400px;
+}
