@@ -1,19 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
+import axiosInstance from '../BaseUrl';
 
 
-function Advertisersidebar() {
+function Advertisersidebar({url}) {
+  const id=localStorage.getItem("advertiserid")
+  console.log(id);
+  const[data,setData]=useState({})
+
+useEffect(()=>{
+  axiosInstance.post(`viewoneadvertiser/${id}`)
+  .then((res)=>{
+      console.log(res)
+      setData(res.data.data);
+      console.log(res.data.data);
+  })
+  .catch((err)=>{
+      console.log(err);
+  })
+},[])
+
   return (
     <div className='col-3' style={{paddingLeft:"30px"}}>
     <div className="reader_profile_sidebar">
-{/* <div className="reader_profile_sidebar_img mt-5">
-<Link to=''><img src={""} alt="profile_picture" /></Link>
-<div className="reader_profile_sidebar_camerabg">
-<Link to=''><i class="ri-camera-line"></i></Link>
+<div className="reader_profile_sidebar_img mt-5">
+{/* <img src={`${url}/${data?.image?.filename}`} alt="profile_picture" /> */}
 </div>
-</div> */}
 <div className="reader_profile_sidebar_title">
-<p>fbfb</p>
+<p>{data?.firstname}</p>
 </div>
 <div className="reader_profile_sidebar_settings reader_profile_sidebar_padding ">
 <i class="ri-settings-3-fill reader_profile_sidebar_icons"></i>

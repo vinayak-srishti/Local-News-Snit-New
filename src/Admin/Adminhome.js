@@ -15,11 +15,11 @@ import Addsubscription from './Addsubscription'
 import Viewsubscription from './Viewsubscription'
 import Viewsubscribers from './Viewsubscription/Viewsubscribers'
 // const url = "http://localhost:4004";
-const url="http://hybrid.srishticampus.in:4003/"
+// const url="http://hybrid.srishticampus.in:4003/"
 
 
 
-function Adminhome({data}) {
+function Adminhome({data,url}) {
   return (
     <div className='container_adminprofile'>
         <Adminsidebar/>
@@ -32,13 +32,13 @@ function Adminhome({data}) {
         ):data == 'viewadvertiser' ?(
             <Adminviewadvertiser/>
         ):data=='viewsingleadvertiser' ?(
-          <Adminviewsingleadvertiser/>
+          <Adminviewsingleadvertiser url={url}/>
         ): data =='adminprivacy' ?(
           <Adminprivacy/>
         ): data == "viewcontributer" ?(
           <Adminviewcontributer/>
         ):data =="viewsinglecontributer" ?(
-          <Adminviewsinglecontributer/>
+          <Adminviewsinglecontributer url={url}/>
         ):data=='requests'?(
           <Adminaddrequest url={url}/>
         ):data=='addsubscription'?(

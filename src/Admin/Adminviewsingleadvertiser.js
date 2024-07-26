@@ -4,7 +4,7 @@ import axiosInstance from '../BaseUrl'
 import { useNavigate, useParams } from 'react-router-dom'
 
 
-function Adminviewsingleadvertiser() {
+function Adminviewsingleadvertiser({url}) {
     const navigate=useNavigate()
     const id=useParams()
     const[data,setdata]=useState({})
@@ -42,7 +42,7 @@ const deletefn=((_id)=>{
     <div className='col-8'>
     <div className='adminview_sinleuser container'>
         <div className='adminviews row'>
-            <h3>Advertisers</h3>
+            <h3>Advertiser</h3>
         </div>
         <div className='adminview_sinleuser_box row'>
             <div className='adminview_sinleuser col'>
@@ -103,7 +103,7 @@ const deletefn=((_id)=>{
 
                     </div>
                        <div className='col-5'>
-                            <img src={img} alt="image" className='admin_viewuser_image'/>
+                            <img src={`${url}/${data?.image?.filename}`} alt="image" className='admin_viewuser_image'/>
                        </div>
                 
                 </div>

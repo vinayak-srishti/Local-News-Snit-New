@@ -40,7 +40,7 @@ function Readerhome3({url}) {
               {storedReaderId ? (
              <Link to={"/viewallnewsbyid/" + a._id}   style={{ textDecoration: "none", color: "black" }} >
           <div className="backbround-img">
-            <div className="reader_smbox">Newses</div>
+            <div className="reader_smbox"></div>
             <div className="reader-image">
                 <img src={`${url}/${a.image.filename}`} alt="images" width="370px" height="180px" />
                 <div className="readre-box-under">
@@ -79,7 +79,7 @@ function Readerhome3({url}) {
           </Link>
               ):(
                 <div className="backbround-img">
-                <div className="reader_smbox">Sports</div>
+                <div className="reader_smbox"></div>
                 <div className="reader-image">
                     <img src={`${url}/${a.image.filename}`} alt="images" width="370px" height="180px" />
                     <div className="readre-box-under">

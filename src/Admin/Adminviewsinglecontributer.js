@@ -4,7 +4,8 @@ import axiosInstance from '../BaseUrl'
 import { useNavigate, useParams,Link } from 'react-router-dom'
 
 
-function Adminviewsinglecontributer() {
+function Adminviewsinglecontributer({url}) {
+    console.log(url);
     const navigate=useNavigate()
     const [data,setdata]=useState({})
     const id=useParams()
@@ -43,7 +44,7 @@ const deletefn=((_id)=>{
     <div className='col-8'>
     <div className='adminview_sinleuser container'>
         <div className='adminviews row'>
-            <h3>Contributers</h3>
+            <h3>Contributer</h3>
         </div>
         <div className='adminview_sinleuser_box row'>
             <div className='adminview_sinleuser col'>
@@ -83,10 +84,10 @@ const deletefn=((_id)=>{
                             <p>Pincode</p>
                             <p>{data.pincode}</p>
                         </div>
-                        {/* <div className='reader_profile_account_info_fulldetails_box mb-3' >
+                        <div className='reader_profile_account_info_fulldetails_box mb-3' >
                             <p>Nationality</p>
                             <p>{data.nationality}</p>
-                        </div> */}
+                        </div> 
                         <div className='reader_profile_account_info_fulldetails_box mb-3' >
                             <p>Contact</p>
                             <p>{data.contact}</p>
@@ -104,7 +105,7 @@ const deletefn=((_id)=>{
 
                     </div>
                        <div className='col-5'>
-                            <img src={img} alt="image" className='admin_viewuser_image'/>
+                            <img src={`${url}/${data?.image?.filename}`} alt="image" className='admin_viewuser_image'/>
                        </div>
                 
                 </div>

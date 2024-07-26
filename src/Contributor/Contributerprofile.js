@@ -7,10 +7,10 @@ import Contributereditprofile from './Contributereditprofile'
 import Readreabout from '../Reader/Readreabout'
 import Readerprivicay from '../Reader/Readerprivicay'
 
-function Contributerprofile({data}) {
+function Contributerprofile({data,url}) {
   return (
     <div className='container_readerprofile'>
-        <Contributersidebar/>
+        <Contributersidebar url={url}/>
         {data === 'contributerviewprofile' ? (
             <Contributerviewprofile/>
         ):data=== 'contributereditprofile' ?(

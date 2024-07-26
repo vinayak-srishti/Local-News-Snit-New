@@ -34,8 +34,8 @@ useEffect(()=>{
                             <p className='col-2'>Reg no</p>
                             <p className='col-3'>Company name</p>
                             <p className='col-3'>Email</p>
-                            <p className='col-2'>Contact</p>
-                            <p className='col-4'>Location</p>
+                            {/* <p className='col-2'>Contact</p> */}
+                            <p className='col-4'>City</p>
                         </div>
 
                     </div>
@@ -48,8 +48,8 @@ useEffect(()=>{
                             <p className='col-2'>{b.regno}</p>
                             <p className='col-3'>{b.companyname}</p>
                             <p className='col-3'>{b.email}</p>
-                            <p className='col-2'>{b.contact}</p>
-                            <p className='col-4'>{b.street}</p>
+                            {/* <p className='col-2'>{b.contact}</p> */}
+                            <p className='col-4'>{b.city}</p>
                         </div>
 
                     </div></Link>

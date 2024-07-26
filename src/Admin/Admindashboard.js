@@ -196,9 +196,9 @@ function Admindashboard() {
           </div>
           <div className="admindashboard_users" style={{ display: "flex" }}>
             <p className="col-2">Reg no</p>
-            <p className="col-2">Company </p>
+            <p className="col-3">Company </p>
             <p className="col-3">Email </p>
-            <p className="col-3">Contact</p>
+            {/* <p className="col-3">Contact</p> */}
             {/* <p className='col-2'>Activity</p> */}
             <p className="col-4">Location</p>
           </div>
@@ -220,7 +220,7 @@ function Admindashboard() {
                   {b.regno}
                 </p>
                 <p
-                  className="col-2"
+                  className="col-3"
                   style={{
                     width: "150px",
                     whiteSpace: "nowrap",
@@ -241,7 +241,7 @@ function Admindashboard() {
                 >
                   {b.email}
                 </p>
-                <p
+                {/* <p
                   className="col-3"
                   style={{
                     width: "200px",
@@ -251,7 +251,7 @@ function Admindashboard() {
                   }}
                 >
                   {b.contact}
-                </p>
+                </p> */}
                 {/* <p className='col-2'>Activity</p> */}
                 <p
                   className="col-4"
@@ -284,8 +284,7 @@ function Admindashboard() {
             <h2 className="admindashboard_h2">Contributor</h2>
           </div>
           <div className="admindashboard_users" style={{ display: "flex" }}>
-            <p className="col-2">Reg no</p>
-            <p className="col-2">Company </p>
+            <p className="col-3">Name </p>
             <p className="col-3">Email </p>
             <p className="col-2">Contact</p>
             {/* <p className='col-2'>Activity</p> */}
@@ -297,9 +296,8 @@ function Admindashboard() {
                 className="admindashboard_users_list"
                 style={{ display: "flex" }}
               >
-                <p className="col-2">784</p>
-                <p className="col-2">
-                  {c.firstname} {c.lastname}
+                <p className="col-3">
+                  {c.firstname} 
                 </p>
                 <p className="col-3">{c.email} </p>
                 <p className="col-2">{c.contact}</p>

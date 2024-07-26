@@ -39,9 +39,9 @@ function Adminviewuser() {
             <div className='reader_viewuser_boxes '>
               <div  style={{ display: 'flex' }}>
               {/* <p className='col-2'>Regno</p> */}
-              <p className='col-2'>Name</p>
+              <p className='col-4'>Name</p>
               {/*<p className='col-2'>Account Status</p> */}
-              <p className='col-4'>Loction</p>
+              <p className='col-4'>City</p>
               <p className='col-2'>Email</p>
 
               </div>
@@ -54,9 +54,9 @@ function Adminviewuser() {
               <div className='reader_viewuser_boxes ' style={{ display: 'flex' }}> 
                          
               {/* <p className='col-2'>Regno</p> */}
-              <p className='col-2' >{a.firstname}</p>
+              <p className='col-4' >{a.firstname} {a.lastname}</p>
               {/*  <p className='col-2'>account</p> */}
-              <p className='col-4'>{a.city},{a.street},{a.nationality}</p>
+              <p className='col-4'>{a.city}</p>
               <p className='col-2'>{a.email}</p>
 
             </div>

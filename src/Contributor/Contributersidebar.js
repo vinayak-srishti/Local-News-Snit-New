@@ -4,7 +4,8 @@ import axiosInstance from '../BaseUrl'
 import { Link } from "react-router-dom";
 
 
-function Contributersidebar() {
+function Contributersidebar({url}) {
+  console.log(url);
 const id=localStorage.getItem("contibuterid")
 console.log(id);
 
@@ -25,12 +26,9 @@ useEffect(()=>{
   return (
     <div className='col-3' >
     <div className="reader_profile_sidebar">
-{/* <div className="reader_profile_sidebar_img mt-5">
-<Link to=''><img src={""} alt="profile_picture" /></Link>
-<div className="reader_profile_sidebar_camerabg">
-<Link to=''><i class="ri-camera-line"></i></Link>
-</div>
-</div> */}
+ <div className="reader_profile_sidebar_img mt-5">
+{/* <img src={`${url}/${data?.image?.filename}`} alt="profile_picture" /> */}
+</div> 
 <div className="reader_profile_sidebar_title">
 <p>{data.firstname}</p>
 </div>

@@ -15,7 +15,7 @@ function Advertisermain({data}) {
 
   return (
     <div style={{display:"flex"}}>
-        <Advertisersidebar/>
+        <Advertisersidebar url={url}/>
         {data== "viewpro" ?(
             <Advertiserviewuploads url={url}/>
         ): data=="uploadadd" ?(
