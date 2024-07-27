@@ -52,7 +52,7 @@ function Readernavafterlogin() {
                   </ul>
                 </li> */}
                 <li class="nav-item">
-                  <Link to="/others" style={{textDecoration:"none"}}><a class="nav-link" >All Newses</a></Link>
+                  <Link to="/others" style={{textDecoration:"none"}}><a class="nav-link" >All News</a></Link>
                 </li>
 
                 {/* <li class="nav-item dropdown">

@@ -89,7 +89,7 @@ const location=useLocation()
                     </button> */}
                   </>
                 )}
-                <button className='ri-user-line' id='reader_usename'>Rahul</button>
+                <button className='ri-user-line' id='reader_usename'>{a?.contributorid?.firstname}</button>
                 <button className='ri-map-pin-line' id='reader_location'>{a.location}</button>
                 <button className='ri-map-pin-time-line' id='reader_time'>{timeString}</button>
               </div>

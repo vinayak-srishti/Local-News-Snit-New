@@ -50,7 +50,7 @@ function Readernav() {
                   </ul>
                 </li> */}
                 <li class="nav-item">
-                 <Link to="/otherslogin" style={{textDecoration:"none"}} ><a class="nav-link" >All Newses</a></Link>
+                 <Link to="/otherslogin" style={{textDecoration:"none"}} ><a class="nav-link" >All News</a></Link>
                 </li>
 
                 {/* <li class="nav-item dropdown">
