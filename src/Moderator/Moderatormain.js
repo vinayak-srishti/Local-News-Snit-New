@@ -9,8 +9,8 @@ import Moderatorviewcontribuorrequest from './Moderatorviewcontribuorrequest'
 import Viewsinglecontributor from "./Viewsinglecontributor"
 
 function Moderatormain({data}) {
-  // const url = "http://localhost:4004";
-  const url="http://hybrid.srishticampus.in:4003/"
+  const url = "http://localhost:4004";
+  // const url="http://hybrid.srishticampus.in:4003/"
 
 
   return (
