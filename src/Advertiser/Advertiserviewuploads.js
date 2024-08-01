@@ -51,7 +51,15 @@ function Advertiserviewuploads({url}) {
                                     <img src={`${url}/${item.image.filename}`} alt='image' />
                                 </div>
                                 <div className='addupload_box'>
-                                    <h5>{item.title}</h5>
+                                    <h5
+                                      style={{
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
+                                        display: '-webkit-box',
+                                        WebkitLineClamp: 1,
+                                        WebkitBoxOrient: 'vertical'
+                                      }}
+                                    >{item.title}</h5>
                                     <p
                                      style={{
                                         overflow: 'hidden',
@@ -61,6 +69,14 @@ function Advertiserviewuploads({url}) {
                                         WebkitBoxOrient: 'vertical'
                                       }}
                                     >{item.content}</p>
+                                    {
+                                        item.isactive===true?(
+                                            <p className='add-approved-status'>Approved<span className='ri-check-line'/></p>
+                                        ):(
+                                            <p className='add-pending-status'>Pending...</p>
+                                        )
+                                    }
+
                                     {hoveredIndex === index && (
                                       <Link to={"/addsviewbyid/"+item._id} style={{textDecoration:"none",color:"black"}}>  <div className='icon-container'>
                                             {/* Place your icon here */}

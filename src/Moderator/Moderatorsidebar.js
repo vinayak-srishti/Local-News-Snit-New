@@ -155,7 +155,7 @@ function Moderatorsidebar() {
 </Link>
 
 </div>
-<Link to='/moderatorlogin' ><div className="reader_profile_sidebar_logoybtn mt-4 mb-4">
+<Link to='/' ><div className="reader_profile_sidebar_logoybtn mt-4 mb-4">
 <button className="btn btn-secondary" 
 // onClick={handleLogout}
 >

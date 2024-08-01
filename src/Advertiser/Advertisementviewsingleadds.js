@@ -93,7 +93,7 @@ function Advertisementviewsingleadds({url}) {
             </Link>
           </div>
           <div className="col-6 contributer_arrow">
-            <h2> Advertisements </h2>
+            <h2> Advertisement </h2>
           </div>
         </div>
         <form >
