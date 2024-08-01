@@ -168,7 +168,7 @@ function Adminsidebar() {
         </Link>
         
       </div>
-      <Link to='/admin' ><div className="admin_profile_sidebar_logoybtn mt-4 mb-4">
+      <Link to='/' ><div className="admin_profile_sidebar_logoybtn mt-4 mb-4">
         <button className="btn btn-secondary" >
           <i class="ri-logout-box-r-line"></i> logout
         </button>
