@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from '../BaseUrl';
 
 
 function Advertisersidebar({url}) {
   const id=localStorage.getItem("advertiserid")
+  const[readerid,setReaderid]=useState(null);
+
   console.log(id);
   const[data,setData]=useState({})
+  const navigate=useNavigate()
 
 useEffect(()=>{
+  if(id===null){
+    navigate("/")
+  }
   axiosInstance.post(`viewoneadvertiser/${id}`)
   .then((res)=>{
       console.log(res)
@@ -19,6 +25,11 @@ useEffect(()=>{
       console.log(err);
   })
 },[])
+const handleLogout = () => {
+  localStorage.removeItem("advertiserid");
+  setReaderid(null);
+};
+
 
   return (
     <div className='col-3' style={{paddingLeft:"30px"}}>
@@ -155,7 +166,7 @@ useEffect(()=>{
 </div>
 <Link to='/' ><div className="reader_profile_sidebar_logoybtn mt-4 mb-4">
 <button className="btn btn-secondary" 
-// onClick={handleLogout}
+onClick={handleLogout}
 >
   <i class="ri-logout-box-r-line"></i> logout
 </button>

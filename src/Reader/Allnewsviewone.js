@@ -75,7 +75,7 @@ function Allnewsviewone({ url }) {
     axiosInstance
       .post(`viewalladds`)
       .then((res) => {
-        // console.log(res);
+        console.log(res);
         setLatestAdds(res.data.msg);
         // console.log(res.data.msg);
       })
@@ -122,21 +122,20 @@ function Allnewsviewone({ url }) {
     }
   };
 
-
   //subscription functionality
   const rid = localStorage.getItem("readerid");
   console.log(rid);
-  const [subscribtion,setSubscription]=useState({})
-  
+  const [subscribtion, setSubscription] = useState({});
+
   useEffect(() => {
     axiosInstance
       .post(`getSubscriptionByReaderId/${rid}`)
       .then((result) => {
-        console.log((result) , " subscription details");
-        setSubscription(result.data.data)
+        console.log(result, " subscription details");
+        setSubscription(result.data.data);
       })
       .catch((error) => {
-        console.error("Error:", error);
+        // console.error("Error:", error);
       });
   }, [rid]);
 
@@ -144,7 +143,7 @@ function Allnewsviewone({ url }) {
     <div className="container reader_viewone" style={{ margin: "30px" }}>
       <div className="row">
         <div className="reader_viewone col-1 ">
-          <Link to={prevPage || "/"}>
+          <Link to={prevPage || "/readerhome"}>
             <img src={img} alt="imageartrow" width="40px" height="40px" />
           </Link>
         </div>
@@ -161,15 +160,15 @@ function Allnewsviewone({ url }) {
           />
         </div>
         <div className="col-1">
-        {(subscribtion.planId === "299" || subscribtion.planId === "499") && (
-          <img
-            src={imgopt}
-            alt="option img"
-            width="40px"
-            height="40px"
-            onClick={handleLoginButtonClick}
-          />
-        )}
+          {(subscribtion.planId === "299" || subscribtion.planId === "499") && (
+            <img
+              src={imgopt}
+              alt="option img"
+              width="40px"
+              height="40px"
+              onClick={handleLoginButtonClick}
+            />
+          )}
         </div>
       </div>
       <div className="row  reader_viewone-title">
@@ -195,48 +194,62 @@ function Allnewsviewone({ url }) {
               <br />
             </div>
           )} */}
-          {!subscribtion.planId && (
-<div
-  id="carouselExampleInterval"
-  className="carousel slide"
-  data-bs-ride="carousel"
->
-  <div className="carousel-inner">
-    {latestAdds &&
-      latestAdds.map((a, index) => (
-        <div
-          className={`carousel-item ${index === 0 ? "active" : ""}`}
-          data-bs-interval="5000"
-          key={a.image.filename}
-        >
-          <img
-            src={`${url}/${a.image.filename}`}
-            className="d-block w-100"
-            alt="..."
-          />
-        </div>
-      ))}
+       {!subscribtion.planId && (
+  <div
+    id="carouselExampleInterval"
+    className="carousel slide"
+    data-bs-ride="carousel"
+  >
+    <div className="carousel-inner">
+      {latestAdds &&
+        latestAdds.map((a, index) => (
+          <div
+            className={`carousel-item ${index === 0 ? "active" : ""}`}
+            data-bs-interval="5000"
+            key={a.image.filename}
+          >
+            <div className="image-container">
+              <img
+                src={`${url}/${a.image.filename}`}
+                className="d-block w-100"
+                alt="..."
+              />
+              <div className="image-overlay">
+                <div className="image-content">
+                  <h5>{a.title}</h5>
+                  <p>{a.content}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+    </div>
+    <button
+      className="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleInterval"
+      data-bs-slide="prev"
+    >
+      <span
+        className="carousel-control-prev-icon"
+        aria-hidden="true"
+      ></span>
+      <span className="visually-hidden">Previous</span>
+    </button>
+    <button
+      className="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleInterval"
+      data-bs-slide="next"
+    >
+      <span
+        className="carousel-control-next-icon"
+        aria-hidden="true"
+      ></span>
+      <span className="visually-hidden">Next</span>
+    </button>
   </div>
-  <button
-    className="carousel-control-prev"
-    type="button"
-    data-bs-target="#carouselExampleInterval"
-    data-bs-slide="prev"
-  >
-    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Previous</span>
-  </button>
-  <button
-    className="carousel-control-next"
-    type="button"
-    data-bs-target="#carouselExampleInterval"
-    data-bs-slide="next"
-  >
-    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Next</span>
-  </button>
-</div>
-          )}
+)}
 
           {data.subcontent}
         </p>

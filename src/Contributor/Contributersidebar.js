@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import "../Reader/Readerprofilesidebar.css"
 import axiosInstance from '../BaseUrl'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 function Contributersidebar({url}) {
   console.log(url);
 const id=localStorage.getItem("contibuterid")
 console.log(id);
+const navigate=useNavigate()
 
 const[data,setdata]=useState([])
+const[readerid,setReaderid]=useState(null);
+
 
 useEffect(()=>{
+  if(id===null){
+    navigate("/")
+  }
   axiosInstance.post(`/contibuterviewbyid/${id}`,data)
   .then((result)=>{
       setdata(result.data.data)
@@ -22,6 +28,12 @@ useEffect(()=>{
   console.log(err);
  })
 },[])
+
+const handleLogout = () => {
+  localStorage.removeItem("contibuterid");
+  setReaderid(null);
+};
+
 
   return (
     <div className='col-3' >
@@ -156,9 +168,9 @@ useEffect(()=>{
 </Link>
 
 </div>
-<Link to='' ><div className="reader_profile_sidebar_logoybtn mt-4 mb-4">
+<Link to='/' ><div className="reader_profile_sidebar_logoybtn mt-4 mb-4">
 <button className="btn btn-secondary" 
-// onClick={handleLogout}
+onClick={handleLogout}
 >
   <i class="ri-logout-box-r-line"></i> logout
 </button>
