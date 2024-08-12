@@ -20,7 +20,7 @@ function Contributerviewmynews({url}) {
   },[])
 
   return (
-    <div className="reader_politics container" style={{ margin: "30px" }}>
+    <div className="reader_politics container" style={{ margin: "30px",height:"100vh" }}>
       {data.length ? (
       data.map((a) => {
         const dateTime = new Date(a.date);

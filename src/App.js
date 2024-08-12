@@ -153,7 +153,7 @@ function App() {
           <Route path="/contributerdltupdtnews/:id" element={[<Contributernavbar />,<Contributerdltupdtnews url={url}/>,<Footer/>]}/>
 
 
-          {/* Advertiser */}
+          {/* Advertiseres */}
           <Route path="/advertisersignin" element={<Advertisersignin />} />
           <Route path="/advertiserlogin" element={[<Adminlognav/>, <AdvertiserLogin />,<Footer/>]} />
           <Route path="/advertiserloginnav" element={<Advertiserloginnav />} />

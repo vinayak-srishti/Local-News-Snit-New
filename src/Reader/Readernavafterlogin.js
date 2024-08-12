@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "../Reader/Readernavafterlogin.css"
 import img from "../Assets/logo.png"
 import imgprofile from "../Assets/profileicon.png"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 
 function Readernavafterlogin() {
+  const storedReaderId = localStorage.getItem("readerid");
+  const navigate=useNavigate()
+
+  useEffect(()=>{
+    if(storedReaderId===null){
+      navigate("/")
+    }
+  },[storedReaderId])
   return (
     <div>
               <div class="container-fluid ">
