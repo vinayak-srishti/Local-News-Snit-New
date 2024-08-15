@@ -36,7 +36,10 @@ function Readersports({url}) {
               <h1>Sports</h1>
 
               {newsData.length ?(
-                newsData.map((a)=>{
+                newsData
+                .slice()
+                .reverse()
+                .map((a)=>{
                     const dateTime = new Date(a.date);
                     const timeString = dateTime.toLocaleTimeString();
                     console.log(a.image.filename);

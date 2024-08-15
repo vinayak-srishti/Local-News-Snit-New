@@ -36,7 +36,10 @@ function Readerpoliticspage({url}) {
 
 
       {data.length ?(
-                data.map((a)=>{
+                data
+                .slice()
+                .reverse()
+                .map((a)=>{
                     const dateTime = new Date(a.date);
                     const timeString = dateTime.toLocaleTimeString();
                     // console.log(a.image.filename);

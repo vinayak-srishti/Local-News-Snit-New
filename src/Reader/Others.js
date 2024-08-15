@@ -55,7 +55,10 @@ const location=useLocation()
     <h1>All news</h1>
 
     {data.length ? (
-      data.map((a) => {
+      data
+      .slice()
+                .reverse()
+      .map((a) => {
         const dateTime = new Date(a.date);
         const timeString = dateTime.toLocaleTimeString();
         return (
