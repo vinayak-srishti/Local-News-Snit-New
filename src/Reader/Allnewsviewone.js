@@ -217,7 +217,7 @@ function Allnewsviewone({ url }) {
               <div className="image-overlay">
                 <div className="image-content">
                   <h5>{a.title}</h5>
-                  <p>{a.content}</p>
+                  <p>"{a.content}"</p>
                 </div>
               </div>
             </div>
