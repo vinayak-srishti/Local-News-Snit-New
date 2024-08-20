@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axiosInstance from "../BaseUrl";
 import { Link } from "react-router-dom";
+import Footer from "../Reader/Footer";
 
 function Contributerviewmynews({url}) {
   const contributerid=localStorage.getItem("contibuterid")
@@ -20,9 +21,12 @@ function Contributerviewmynews({url}) {
   },[])
 
   return (
-    <div className="reader_politics container" style={{ margin: "30px",height:"100vh" }}>
+    <div className="reader_politics container" style={{ minheight:"100vh" }}>
       {data.length ? (
-      data.map((a) => {
+      data
+      .slice()
+      .reverse()
+      .map((a) => {
         const dateTime = new Date(a.date);
         const timeString = dateTime.toLocaleTimeString();
         return (
@@ -55,7 +59,6 @@ function Contributerviewmynews({url}) {
 ) : (
  <div>No data available</div>
 )}
-
     </div>
   );
 }
