@@ -107,7 +107,7 @@ function Readersignin() {
                                     )}
                                 </div>
                                 <div className="col-12 pb-3 input_radio " >
-                                    <label className="pb-3">Gender :</label>
+                                    <label className="pb-3">Gender :</label>&nbsp;&nbsp;&nbsp;
                                     <input type="radio" id="male" name="gender" value='Male' onChange={handleChange} onBlur={handleBlur} required />
                                     <label for="male">&nbsp; Male &nbsp;</label>
                                     <input type="radio" id="female" name="gender" value='Female' onChange={handleChange} onBlur={handleBlur} required />

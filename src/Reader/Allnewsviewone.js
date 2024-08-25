@@ -211,8 +211,9 @@ function Allnewsviewone({ url }) {
             <div className="image-container">
               <img
                 src={`${url}/${a.image.filename}`}
-                className="d-block w-100"
+                className="d-block w-100 "
                 alt="..."
+                // style={{height:'100vh',width:'100%',objectFit:"contain"}}
               />
               <div className="image-overlay">
                 <div className="image-content">

@@ -79,6 +79,7 @@ import Viewsubscription from "./Admin/Viewsubscription";
 import Payment from "./Reader/Subscriptions/Payment";
 import Upgradepayment from "./Reader/Subscriptions/Upgrade/Upgradepayment";
 import Checknewscontent from "./Moderator/Ml/Checknewscontent";
+import ContributerViewrejectednews from "./Contributor/ContributerViewrejectednews";
 
 function App() {
   //local
@@ -151,6 +152,7 @@ function App() {
           <Route path="/contributer_addnews" element={[<Contributernavbar />,<Contributeraddnews/>,<Footer/>]}/>
           <Route path="/contributerviewnewsbyid" element={[<Contributernavbar />,<Contributerviewmynews url={url}/>,<Footer/>]}/>
           <Route path="/contributerdltupdtnews/:id" element={[<Contributernavbar />,<Contributerdltupdtnews url={url}/>,<Footer/>]}/>
+          <Route path="/contributerviewrejectednews" element={[<Contributernavbar />,<ContributerViewrejectednews url={url}/>,<Footer/>]}/>
 
 
           {/* Advertiseres */}

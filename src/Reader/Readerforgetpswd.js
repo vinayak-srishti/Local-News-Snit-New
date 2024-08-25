@@ -49,7 +49,7 @@ function Readerforgetpswd() {
           
         }
         else if(result.data.status==500){
-          alert("usernot found")
+          alert("Enter a valid email")
         }
       })
       .catch((err)=>{
@@ -67,14 +67,14 @@ function Readerforgetpswd() {
         </div>
         <form className='reader_login_inp' onSubmit={handlesubmit}>
         <div className='col-sm-12 input_text'>
-          <input type='text' placeholder='Mail id' name='email' value={password.email} onChange={changehandleSubmit}/>
+          <input type='text' placeholder='Mail id' name='email' value={password.email} onChange={changehandleSubmit} required/>
         </div>
         <div className='col-sm-12 input_text'>
-          <input type='password' placeholder='New Password' name='password' value={password.password} onChange={changehandleSubmit}/>
+          <input type='password' placeholder='New Password' name='password' value={password.password} onChange={changehandleSubmit} required/>
           {passwordError && <p className='error-message'>{passwordError}</p>}
         </div>
         <div className='col-sm-12 input_text'>
-          <input type='password' placeholder='Confirm Password' name='confirmpassword' value={password.confirmpassword} onChange={changehandleSubmit}/>
+          <input type='password' placeholder='Confirm Password' name='confirmpassword' value={password.confirmpassword} onChange={changehandleSubmit} required/>
           {confirmPasswordError && <p className='error-message'>{confirmPasswordError}</p>}
         </div>
         {/* <div className='col-sm-12 '>
@@ -86,11 +86,11 @@ function Readerforgetpswd() {
         </form>
         <div className='col-sm-12 reader_login_or' style={{marginTop:"10px"}}>
           <p>OR</p>
-        </div>
+       
         <div className='col-sm-12 reader_login_last'>
-          <p>YOU HAVE'NT ACCOUNT?
+          <p>You haven't account? &nbsp;&nbsp;
             <Link to="/readersignin"><button type='submit'>CREATE ONE</button></Link></p>
-        </div>
+        </div> </div>
       </div>
 
     </div>

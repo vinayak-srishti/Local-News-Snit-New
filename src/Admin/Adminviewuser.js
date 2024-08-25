@@ -35,7 +35,9 @@ function Adminviewuser() {
                   {/* <h4>Users</h4> */}
                 </div>  
             </div>
+            <div className='div-main-scrollclass2'>
             <div className='row'>
+              <div >
             <div className='reader_viewuser_boxes '>
               <div  style={{ display: 'flex' }}>
               {/* <p className='col-2'>Regno</p> */}
@@ -47,8 +49,10 @@ function Adminviewuser() {
               </div>
             </div>
             </div>
+            </div>
             {data.length ? (
           data.map((a) => (
+            <div style={{marginLeft:"15px"}}>
             <Link to={"/admin_viewsingleuser/"+a._id }style={{textDecoration:'none', color: 'black' }}>
               <div className='row'>
               <div className='reader_viewuser_boxes ' style={{ display: 'flex' }}> 
@@ -61,10 +65,12 @@ function Adminviewuser() {
 
             </div>
             </div></Link>
+            </div>
           ))
         ) : (
           <div>No data available</div>
         )}
+        </div>
       </div>
     </div>
   );

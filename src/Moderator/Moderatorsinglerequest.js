@@ -51,7 +51,7 @@ function Moderatorsinglerequest({ url }) {
         axiosInstance.post(`deleteNewsById/${id.id}`)
             .then((res) => {
                 if (res.data.status == 200) {
-                    alert("Deled Succesfully")
+                    alert("Rejected Succesfully")
                     navigate("/moderatorrequest")
                 }
                 else {

@@ -90,7 +90,7 @@ function Contributerdltupdtnews({ url }) {
 
   const deletefn = () => {
     axiosInstance
-      .post(`deleteNewsById/${id}`, data)
+      .post(`deleteNewsByContributer/${id}`, data)
       .then((res) => {
         if (res.data.status === 200) {
           alert("Deleted successfully");
@@ -267,6 +267,9 @@ function Contributerdltupdtnews({ url }) {
             </div>
           </div>
           <div className="coontributor_button" style={{ display: "flex" }}>
+          {
+            data?.isactive==="approved"?(
+            
             <button
               type="submit"
               className="btn btn-primary"
@@ -274,6 +277,10 @@ function Contributerdltupdtnews({ url }) {
             >
               Update{" "}
             </button>
+              
+            ):(<></>)
+          }
+
             <button type="submit" className="btn btn-danger" onClick={deletefn}>
               Delete{" "}
             </button>

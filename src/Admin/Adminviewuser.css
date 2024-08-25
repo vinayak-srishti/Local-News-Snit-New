@@ -92,3 +92,12 @@
     padding-left: 15px; /* Adjust the left padding for smaller screens */
   }
 }
+.div-main-scrollclass2{
+    max-height: 90vh; /* Adjust height as needed */
+    overflow-y: auto;
+    padding-right: 15px;
+}
+.div-main-scrollclass2::-webkit-scrollbar{
+    scrollbar-width: none;
+
+}

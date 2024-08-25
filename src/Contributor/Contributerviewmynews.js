@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axiosInstance from "../BaseUrl";
 import { Link } from "react-router-dom";
 import Footer from "../Reader/Footer";
+import "./Contributersidebar.css"
 
 function Contributerviewmynews({url}) {
   const contributerid=localStorage.getItem("contibuterid")
@@ -42,6 +43,21 @@ function Contributerviewmynews({url}) {
               Update/Delete
             </button></Link> 
           </p>
+          {
+  a?.isactive === "approved" ? (
+    <div className="news_apprv_btn">
+      <button type="button">Approved <span className="ri-check-line" /></button>
+    </div>
+  ) : a?.isactive === "pending" ? (
+    <div className="news_pending_btn">
+      <button type="button">Pending...</button>
+    </div>
+  ) : a?.isactive === "rejected" ? (
+    <div className="news_rejected_btn">
+      <button type="button">Rejected <span className="ri-close-circle-line" /></button>
+    </div>
+  ) : null
+}
           {/* <div className='like-dislike-buttons'> */}
           <button className="ri-map-pin-line" id="reader_location">
             {a.location}
