@@ -31,7 +31,7 @@ function ReaderLogin() {
           alert("password mismatch")
       }
       else {
-        alert(result.data.msg)
+        alert("Enter a Valid Email")
       }
     })
     .catch((error) => {
@@ -50,13 +50,13 @@ function ReaderLogin() {
           </div>
           <form className='reader_login_inp' onSubmit={submitfn}>
           <div className='col-sm-12 input_text'>
-            <input type='text' placeholder='Mail id' name='email' value={login.email} onChange={changehandleSubmit} />
+            <input type='text' placeholder='Mail id' name='email' value={login.email} onChange={changehandleSubmit} required/>
           </div>
           <div className='col-sm-12 input_text'>
-            <input type='password' placeholder='Password' name='password' value={login.password} onChange={changehandleSubmit} />
+            <input type='password' placeholder='Password' name='password' value={login.password} onChange={changehandleSubmit} required />
           </div>
           <div className='col-sm-12 '>
-            <Link to="/readerforgetpswd" style={{textDecoration:'none' ,color:'black'}}><h6 className='mt-4 forget_login'>Forget Password</h6></Link>
+            <Link to="/readerforgetpswd" style={{textDecoration:'none' ,color:'black'}}><h6 className='mt-4 forget_login'>Forget Password ?</h6></Link>
           </div>
           <div className='col-sm-12  '>
             <button type='submit'  className='btn btn-primary mt-4 login_button'>LOGIN</button>
@@ -64,10 +64,11 @@ function ReaderLogin() {
           </form>
           <div className='col-sm-12 reader_login_or'style={{marginTop:"10px"}}>
             <p>OR</p>
-          </div>
+          
           <div className='col-sm-12 reader_login_last'>
-            <p>YOU HAVE'NT ACCOUNT?
+            <p>You haven't account? &nbsp;&nbsp;
               <Link to="/readersignin"><button type='submit'>CREATE ONE</button></Link></p>
+          </div>
           </div>
         </div>
 

@@ -1,29 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "../Admin/Admindashboard.css";
 import axiosInstance from "../BaseUrl";
-import { Link } from 'react-router-dom'
-
+import { Link } from "react-router-dom";
 
 function Admindashboard() {
   const [data, setdata] = useState([]);
   const [advertiser, setAdvertiser] = useState([]);
   const [contributer, setContributer] = useState([]);
+  const [searchInput, setSearchInput] = useState('')
+
 
   useEffect(() => {
-    axiosInstance
-      .post(`viewallusers`)
-      .then((res) => {
-        console.log(res.data);
-        if (res.data.status === 200) {
-          setdata(res.data.data);
-        } else if (res.data.status === 500) {
-          alert("No user found");
-        }
-      })
-
-      .catch((err) => {
-        console.log(err);
-      });
 
     axiosInstance
       .post(`/viewalladvertiser`, advertiser)
@@ -45,28 +32,63 @@ function Admindashboard() {
         console.log(err);
       });
   }, []);
+
+  const fetchuser=(()=>{
+    axiosInstance
+      .post(`viewallusers`)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.status === 200) {
+          setdata(res.data.data);
+        } else if (res.data.status === 500) {
+          alert("No user found");
+        }
+      })
+
+      .catch((err) => {
+        console.log(err);
+      });
+
+  })
+  useEffect(()=>{
+    fetchuser()
+  },[])
+  const handleSearch = (e) => {
+    const value = e.target.value
+    setSearchInput(value)
+
+    if (value.trim() === '') {
+      fetchuser()
+    } else {
+        const filteredData = data.filter(a => 
+            a?.firstname.toLowerCase().includes(value.toLowerCase())
+        )
+        setdata(filteredData)
+    }
+}
+
   console.log(advertiser.length);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSearch = async () => {
-    try {
-      const response = await axiosInstance.post(
-        `/searchusersByName/${searchTerm}`
-      );
-      setSearchResults(response.data);
-      setErrorMessage("");
-      console.log(response.data);
-    } catch (error) {
-      if (error.response && error.response.status === 404) {
-        setSearchResults([]);
-        setErrorMessage("No User found with the given name.");
-      } else {
-        setErrorMessage("Server error. Please try again later.");
-      }
-    }
-  };
+  // const handleSearch = async () => {
+  //   try {
+  //     const response = await axiosInstance.post(
+  //       `/searchusersByName/${searchTerm}`
+  //     );
+  //     setSearchResults(response.data);
+  //     setErrorMessage("");
+  //     console.log(response.data);
+  //   } catch (error) {
+  //     if (error.response && error.response.status === 404) {
+  //       setSearchResults([]);
+  //       setErrorMessage("No User found with the given name.");
+  //     } else {
+  //       setErrorMessage("Server error. Please try again later.");
+  //     }
+  //   }
+  // };
 
   return (
     <div className="col-9" style={{ margin: "20px" }}>
@@ -75,32 +97,48 @@ function Admindashboard() {
           <div className="admin_dashboard_text col-6">
             <h2 className="admindashboard_h2">Dashboard</h2>
           </div>
-          <div className="col-6" style={{display:"flex"}}>
-          <div className="admin_dashboard_search col-3">
-            <input
-              type="text"
-              placeholder="Search your name here"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-          <div className="admin_dashboard_search col-3" style={{paddingLeft:"125px"}}>
-            <button type="submit" className="btn btn-primary" onClick={handleSearch}>
-              Search
-            </button>
+          <div className="col-6" style={{ display: "flex" }}>
+            <div className="admin_dashboard_search col-3">
+              <input
+                type="text"
+                placeholder="Search user's name here"
+                // value={searchTerm}
+                // onChange={
+                //   (e) => {setSearchTerm(e.target.value);
+                //   handleSearch();
+                // }}
+                value={searchInput}
+                onChange={handleSearch}
+              />
             </div>
-            <div style={{paddingTop:"50px"}} className="viewservices_search">
-            {errorMessage && <p>{errorMessage}</p>}
-            <div id="service-search" >
-              {searchResults.map((service) => (
-                <div  className="viewservices_search"  >
-                 <Link to={`/admin_viewsingleuser/${service._id}`} style={{textDecoration:"none",color:"black"}}>
-                    <p className="ri-search-line viewsearch-users" >{service.firstname}</p>
-                    </Link> 
-                </div>
-              ))}
-</div>
-          </div>
+            <div
+              className="admin_dashboard_search col-3"
+              style={{ paddingLeft: "125px" }}
+            >
+              <button
+                type="submit"
+                className="btn btn-primary"
+              >
+                Search
+              </button>
+            </div>
+            <div style={{ paddingTop: "50px" }} className="viewservices_search">
+              {errorMessage && <p>{errorMessage}</p>}
+              <div id="service-search">
+                {searchResults.map((service) => (
+                  <div className="viewservices_search">
+                    <Link
+                      to={`/admin_viewsingleuser/${service._id}`}
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      <p className="ri-search-line viewsearch-users">
+                        {service.firstname}
+                      </p>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
           <div className="admin_dashboard_box col-2">
             <p>UserCount</p>
@@ -119,68 +157,76 @@ function Admindashboard() {
                         <h1 id='count'>1</h1>
                     </div> */}
         </div>
-        <div className="row">
-          <div className="admin_dashboard_text">
-            <h2 className="admindashboard_h2">Users</h2>
-          </div>
 
-          <div className="admindashboard_users" style={{ display: "flex" }}>
-            {/* <p className='col-2'>Reg no</p> */}
-            <p className="col-4">Name</p>
-            <p className="col-4">Email </p>
-            {/* <p className='col-3'>Account Status</p> */}
-            {/* <p className='col-2'>Activity</p> */}
-            <p className="col-4">Location</p>
-          </div>
-          {data.length ? (
-            data.map((a) => (
-              <div
-                className="admindashboard_users_list"
-                style={{ display: "flex" }}
-              >
-                {/* <p className='col-2'>784</p> */}
-                <p
-                  className="col-4"
-                  style={{
-                    width: "250px",
-                    whiteSpace: "nowrap",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                  }}
-                >
-                  {a.firstname}
-                </p>
-                <p
-                  className="col-4"
-                  style={{
-                    width: "250px",
-                    whiteSpace: "nowrap",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                  }}
-                >
-                  {a.email}{" "}
-                </p>
-                {/* <p className='col-3'>Activite</p> */}
+        <div className="div-main-scrollclass">
+          <div className="row">
+            <div>
+            <div className="admin_dashboard_text">
+              <h2 className="admindashboard_h2">Users</h2>
+            </div>
 
-                <p
-                  className="col-4"
-                  style={{
-                    width: "300px",
-                    whiteSpace: "nowrap",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                  }}
+            <div className="admindashboard_users" style={{ display: "flex" }}>
+              {/* <p className='col-2'>Reg no</p> */}
+              <p className="col-4">Name</p>
+              <p className="col-4">Email </p>
+              {/* <p className='col-3'>Account Status</p> */}
+              {/* <p className='col-2'>Activity</p> */}
+              <p className="col-4">Location</p>
+            </div>
+            </div>
+            {data.length ? (
+              data.map((a) => (
+                <Link
+                to={`/admin_viewsingleuser/${a._id}`}
+                style={{ textDecoration: "none", color: "black" }}
+              > <div
+                  className="admindashboard_users_list"
+                  style={{ display: "flex" }}
                 >
-                  {a.street},{a.state}
-                </p>
-              </div>
-            ))
-          ) : (
-            <div>No data available</div>
-          )}
+                  {/* <p className='col-2'>784</p> */}
+                  <p
+                    className="col-4"
+                    style={{
+                      width: "250px",
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
+                  >
+                    {a.firstname}
+                  </p>
+                  <p
+                    className="col-4"
+                    style={{
+                      width: "250px",
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
+                  >
+                    {a.email}{" "}
+                  </p>
+                  {/* <p className='col-3'>Activite</p> */}
 
-          {/*   <div className='admindashboard_users_list' style={{ display: 'flex' }}>
+                  <p
+                    className="col-4"
+                    style={{
+                      width: "300px",
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
+                  >
+                    {a.street},{a.state}
+                  </p>
+                </div>
+                </Link>
+              ))
+            ) : (
+              <div>No data available</div>
+            )}
+
+            {/*   <div className='admindashboard_users_list' style={{ display: 'flex' }}>
                         <p className='col-2'>Reg no</p>
                         <p className='col-2'>Name</p>
                         <p className='col-2'>Status </p>
@@ -188,60 +234,63 @@ function Admindashboard() {
                      
                         <p className='col-4'>Location</p>
                     </div> */}
-        </div>
+          </div>
 
-        <div className="row">
-          <div className="admin_dashboard_text" style={{ marginTop: "30px" }}>
-            <h2 className="admindashboard_h2">Advertiser</h2>
-          </div>
-          <div className="admindashboard_users" style={{ display: "flex" }}>
-            <p className="col-2">Reg no</p>
-            <p className="col-3">Company </p>
-            <p className="col-3">Email </p>
-            {/* <p className="col-3">Contact</p> */}
-            {/* <p className='col-2'>Activity</p> */}
-            <p className="col-4">Location</p>
-          </div>
-          {advertiser.length ? (
-            advertiser.map((b) => (
-              <div
-                className="admindashboard_users_list"
-                style={{ display: "flex" }}
-              >
-                <p
-                  className="col-2"
-                  style={{
-                    width: "140px",
-                    whiteSpace: "nowrap",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                  }}
+          <div className="row">
+            <div className="admin_dashboard_text" style={{ marginTop: "30px" }}>
+              <h2 className="admindashboard_h2">Advertiser</h2>
+            </div>
+            <div>
+            <div className="admindashboard_users" style={{ display: "flex" }}>
+              <p className="col-2">Reg no</p>
+              <p className="col-3">Company </p>
+              <p className="col-3">Email </p>
+              {/* <p className="col-3">Contact</p> */}
+              {/* <p className='col-2'>Activity</p> */}
+              <p className="col-4">Location</p>
+              </div>
+            </div>
+            {advertiser.length ? (
+              advertiser.map((b) => (
+                <div>
+                <div
+                  className="admindashboard_users_list"
+                  style={{ display: "flex" }}
                 >
-                  {b.regno}
-                </p>
-                <p
-                  className="col-3"
-                  style={{
-                    width: "150px",
-                    whiteSpace: "nowrap",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                  }}
-                >
-                  {b.companyname}
-                </p>
-                <p
-                  className="col-3"
-                  style={{
-                    width: "200px",
-                    whiteSpace: "nowrap",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                  }}
-                >
-                  {b.email}
-                </p>
-                {/* <p
+                  <p
+                    className="col-2"
+                    style={{
+                      width: "140px",
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
+                  >
+                    {b.regno}
+                  </p>
+                  <p
+                    className="col-3"
+                    style={{
+                      width: "150px",
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
+                  >
+                    {b.companyname}
+                  </p>
+                  <p
+                    className="col-3"
+                    style={{
+                      width: "200px",
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
+                  >
+                    {b.email}
+                  </p>
+                  {/* <p
                   className="col-3"
                   style={{
                     width: "200px",
@@ -252,64 +301,67 @@ function Admindashboard() {
                 >
                   {b.contact}
                 </p> */}
-                {/* <p className='col-2'>Activity</p> */}
-                <p
-                  className="col-4"
-                  style={{
-                    width: "160px",
-                    whiteSpace: "nowrap",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
-                  }}
-                >
-                  {b.street}
-                </p>
-              </div>
-            ))
-          ) : (
-            <div>No data available</div>
-          )}
+                  {/* <p className='col-2'>Activity</p> */}
+                  <p
+                    className="col-4"
+                    style={{
+                      width: "160px",
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
+                  >
+                    {b.street}
+                  </p>
+                </div>
+                </div>
+              ))
+            ) : (
+              <div>No data available</div>
+            )}
 
-          {/* <div className='admindashboard_users_list' style={{ display: 'flex' }}>
+            {/* <div className='admindashboard_users_list' style={{ display: 'flex' }}>
                         <p className='col-2'>Reg no</p>
                         <p className='col-2'>Name</p>
                         <p className='col-2'>Status </p>
                         <p className='col-4'>Account Status</p>
                         <p className='col-4'>Location</p>
                     </div> */}
-        </div>
-
-        <div className="row">
-          <div className="admin_dashboard_text" style={{ marginTop: "30px" }}>
-            <h2 className="admindashboard_h2">Contributor</h2>
           </div>
-          <div className="admindashboard_users" style={{ display: "flex" }}>
-            <p className="col-3">Name </p>
-            <p className="col-3">Email </p>
-            <p className="col-2">Contact</p>
-            {/* <p className='col-2'>Activity</p> */}
-            <p className="col-4">Location</p>
-          </div>
-          {contributer.length ? (
-            contributer.map((c) => (
-              <div
-                className="admindashboard_users_list"
-                style={{ display: "flex" }}
-              >
-                <p className="col-3">
-                  {c.firstname} 
-                </p>
-                <p className="col-3">{c.email} </p>
-                <p className="col-2">{c.contact}</p>
-                {/* <p className='col-2'>Activity</p> */}
-                <p className="col-4">{c.street}</p>
-              </div>
-            ))
-          ) : (
-            <div>No data available</div>
-          )}
 
-          {/* <div className='admindashboard_users_list' style={{ display: 'flex' }}>
+          <div className="row">
+            <div className="admin_dashboard_text" style={{ marginTop: "30px" }}>
+              <h2 className="admindashboard_h2">Contributor</h2>
+            </div>
+            <div>
+            <div className="admindashboard_users" style={{ display: "flex" }}>
+              <p className="col-3">Name </p>
+              <p className="col-3">Email </p>
+              <p className="col-2">Contact</p>
+              {/* <p className='col-2'>Activity</p> */}
+              <p className="col-4">Location</p>
+            </div>
+            </div>
+            {contributer.length ? (
+              contributer.map((c) => (
+                <div>
+                <div
+                  className="admindashboard_users_list"
+                  style={{ display: "flex" }}
+                >
+                  <p className="col-3">{c.firstname}</p>
+                  <p className="col-3">{c.email} </p>
+                  <p className="col-2">{c.contact}</p>
+                  {/* <p className='col-2'>Activity</p> */}
+                  <p className="col-4">{c.street}</p>
+                </div>
+                </div>
+              ))
+            ) : (
+              <div>No data available</div>
+            )}
+
+            {/* <div className='admindashboard_users_list' style={{ display: 'flex' }}>
                         <p className='col-2'>Reg no</p>
                         <p className='col-2'>Name</p>
                         <p className='col-2'>Status </p>
@@ -317,6 +369,7 @@ function Admindashboard() {
                       
                         <p className='col-4'>Location</p>
                     </div> */}
+          </div>
         </div>
       </div>
     </div>

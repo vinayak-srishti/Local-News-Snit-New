@@ -65,3 +65,12 @@
 .viewservices_search{
     margin-left: -110px;
 }
+.div-main-scrollclass{
+    max-height: 65vh; /* Adjust height as needed */
+    overflow-y: auto;
+    padding-right: 15px;
+}
+.div-main-scrollclass::-webkit-scrollbar{
+    scrollbar-width: none;
+
+}

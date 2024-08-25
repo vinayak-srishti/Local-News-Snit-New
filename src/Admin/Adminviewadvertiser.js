@@ -29,6 +29,7 @@ useEffect(()=>{
                          <Link to='/advertiser_request' style={{textDecoration:'none', color: 'black' }}>  <div className='ri-file-add-line' id='request'>Requests</div></Link> 
                         </div>
                     </div>
+                    <div className='div-main-scrollclass2'>
                     <div className='row'>
                         <div className='admin_viewadvertiser_box' style={{ display: 'flex' }}>
                             <p className='col-2'>Reg no</p>
@@ -57,17 +58,8 @@ useEffect(()=>{
  ) : (
      <div>No data available</div>
  )}
-
-                    {/* <div className='row'>
-                        <div className='admin_viewadvertiser_box' style={{ display: 'flex' }}>
-                            <p className='col-2'>Reg no</p>
-                            <p className='col-3'>Company name</p>
-                            <p className='col-3'>Email</p>
-                            <p className='col-2'>Contact</p>
-                            <p className='col-4'>Location</p>
-                        </div>
-
-                    </div> */}
+</div>
+                    
 
                 </div>
             </div>

@@ -28,7 +28,7 @@ function Viewsinglereport({url}) {
             .then((res) => {
                 if (res.data.status === 200) {
                     console.log(res);
-                    alert("Deled Succesfully")
+                    alert("Deleted Succesfully")
                     navigate("/allreports")
                 }
                 else {

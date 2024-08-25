@@ -34,13 +34,19 @@ function Viewsubscribers() {
                 {subs && subs.length ? (
           subs.map((a,index) => {
             return (
+              <>
+              {
+                    a?.readerId===null?(<></>):(
                 <div className='row viewsubscription-table-bottom'>
                  <div className='col-2'><p>{a?.readerId?.firstname}</p></div>
                 <div className='col-2'><p>{a?.readerId?.contact}</p></div>
                   <div className='col-2'><p>{a?.readerId?.city}</p></div>
-                  <div className='col-2'><p>{a?.planId}</p></div>
-                  <div className='col-4'><p>{new Date(a.date).toLocaleDateString()}</p></div>
-                </div> 
+                      <div className='col-2'><p>{a?.planId}</p></div>
+                    <div className='col-4'><p>{new Date(a.date).toLocaleDateString()}</p></div>
+                </div>
+               )
+              }
+                </>
 
 );
 })

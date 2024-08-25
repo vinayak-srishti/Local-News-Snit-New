@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import icon from "../../Assets/payment.jpg"
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import axiosInstance from '../../BaseUrl';
 
 function Payment() {
@@ -51,7 +51,7 @@ function Payment() {
           setFormData({ ...formData, numberError: "Card number must be 16 digits." });
           return;
         }
-        if (formData.cdnumber.length < 3) {
+        if (formData.cdnumber.length !== 3) {
           setFormData({ ...formData, cdnumberError: "CVV must be at least 3 digits." });
           return;
         }
@@ -73,10 +73,16 @@ function Payment() {
 
 
       };
+      const navbckfn=(()=>{
+        navigate(-1)
+      })
   return (
     <div className="container-xxl py-5">
     <div className="container ">
-    {/* <Link onClick={navbckfn} style={{textDecoration:"none"}}>  <div className="ri-arrow-left-line payment-backbtn"/></Link> */}
+      <div className='col-12 d-flex'>
+    <Link onClick={navbckfn} style={{textDecoration:"none"}}>  <div className="ri-arrow-left-line payment-backbtn"/></Link>
+    &nbsp;&nbsp;&nbsp;<div><h4>Payment Page</h4></div>
+    </div>
       <div className="row g-5 ">
         <div className="col-lg-6" style={{ marginTop: "7rem" }}>
           <form
@@ -165,7 +171,7 @@ function Payment() {
                   <div className="form-group">
                     <div className="row">
                       <div className="col-4">
-                        <label htmlFor="expiry">Expiry</label>
+                        <label htmlFor="expiry">&nbsp;&nbsp;&nbsp;Expiry</label>
                       </div>
                       <div className="col-4">
                         <label htmlFor="month">Month</label>

@@ -21,7 +21,7 @@ function Advertiserrequest({url}) {
     },[])
 
   return (
-        <div className='container'>
+        <div className='container' style={{minHeight:"100vh",maxHeight:""}} >
                 <Link to="/admin_viewadvertiser"><img src={img1} alt="back" width="40px" height="40px"/></Link>
 
             <div className='row' >

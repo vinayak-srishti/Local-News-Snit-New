@@ -37,6 +37,10 @@ function Contributernavbar() {
             <Link to="/contributerviewnewsbyid" style={{textDecoration:"none"}}> <a class="nav-link" >View Uploaded News</a></Link> 
             </li>
             {/* <li class="nav-item">
+            <Link to="/contributerviewrejectednews" style={{textDecoration:"none"}}> <a class="nav-link" >View Rejected News</a></Link> 
+            </li> */}
+
+            {/* <li class="nav-item">
               <a class="nav-link" href="">Sports</a>
             </li> */}
             {/* <li class="nav-item dropdown">

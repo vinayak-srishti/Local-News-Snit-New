@@ -28,13 +28,17 @@ function Allreports({url}) {
                 const dateTime = new  Date(a.date);
                 const timeString = dateTime.toLocaleTimeString();
            return(
+            <>
+            {
+              a?.newsid===null?(<></>):(
+
         <Link to={"/singlerequest/"+a._id } style={{textDecoration:'none', color: 'black' }}> 
         <div className="moderator_request_box row">
           <div
             className="admin_advertiser_request"
             style={{ display: "flex", marginLeft: "20px", marginTop: "10px" }}
           >
-            <img src={`${url}/${a.newsid?.image.filename}`} alt="image" width="130px" height="100px" />
+            <img src={`${url}/${a.newsid?.image?.filename}`} alt="image" width="130px" height="100px" />
             <div>
               <h4
                 style={{
@@ -46,7 +50,7 @@ function Allreports({url}) {
               >
                 {a.newsid?.title}
               </h4>
-              <p id="arrow">{a.readerid?.firstname} {a.readerid.lastname}</p>
+              <p id="arrow">{a.readerid?.firstname} {a.readerid?.lastname}</p>
             </div>
             <div className="" style={{ paddingLeft: "100px" }}>
               <p></p>
@@ -54,7 +58,11 @@ function Allreports({url}) {
             </div>
           </div>
         </div>
-        </Link>  
+        </Link>
+                      )
+                    }
+        
+        </>  
         )
 })
 ) : (
