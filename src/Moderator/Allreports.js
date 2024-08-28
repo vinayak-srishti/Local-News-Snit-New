@@ -50,7 +50,7 @@ function Allreports({url}) {
               >
                 {a.newsid?.title}
               </h4>
-              <p id="arrow">{a.readerid?.firstname} {a.readerid?.lastname}</p>
+              <p id="arrow">Reported By : {a.readerid?.firstname} {a.readerid?.lastname}</p>
             </div>
             <div className="" style={{ paddingLeft: "100px" }}>
               <p></p>

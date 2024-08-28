@@ -59,7 +59,7 @@ function Viewsinglereport({url}) {
             </label>
           */}
                     <p style={{ fontSize: "20px" }}>Contributer Name:
-                    {data.readerid?.firstname} {data.readerid?.lastname}
+                    {data.newsid?.firstname} {data.readerid?.lastname}
                     </p>
                     <p style={{ fontSize: "20px" }}>Location:
                     {data.newsid?.location} 

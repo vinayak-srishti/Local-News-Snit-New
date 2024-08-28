@@ -42,7 +42,7 @@ function Adminviewcontributer() {
           <div className='reader_viewuser_boxes ' style={{ display: 'flex' }}> 
                      
           <p className='col-2' >{a.firstname} {a.lastname}</p>
-          <p className='col-4 ' >{a.email}kjeufh efyugfugfw</p>
+          <p className='col-4 ' >{a.email}</p>
           <p className='col-2'>{a.contact}</p>
           <p className='col-4'>{a.street}</p>
         </div>
