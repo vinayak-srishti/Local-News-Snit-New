@@ -268,7 +268,7 @@ function Contributerdltupdtnews({ url }) {
           </div>
           <div className="coontributor_button" style={{ display: "flex" }}>
           {
-            data?.isactive==="approved"?(
+            data?.isactive==="approved" || data?.isactive==="pending"?(
             
             <button
               type="submit"
