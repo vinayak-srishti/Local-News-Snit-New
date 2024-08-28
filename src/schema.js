@@ -1,6 +1,7 @@
 import * as yup from "yup";
 
 const passwordRule = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+const passwordRules = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{5,16}$/;
 const pincodeErrorMessage = "Pincode must be a 6 digit number";
 
 
@@ -17,7 +18,7 @@ export const readerRegSchema  = yup.object().shape({
     nationality: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
     email:yup.string().email("Please enter a valid email").required("Required"),
     contact:  yup.number().min(1000000000,"Contact must be a 10 digit number").max(9999999999,"Contact must be a 10 digit number").positive().integer().required("Required"),
-    password:  yup.string().min(5).max(16).matches(passwordRule, "1 uppercase, 1 number, 1 symbol").required("Required"),
+    password:  yup.string().min(5).max(16).matches(passwordRules, "1 uppercase, 1 number, 1 symbol").required("Required"),
     confirmpassword: yup.string().oneOf([yup.ref("password"), null], "Password mismatch").required("Required"),
     // dob: yup.date().required("Required"),
     // district: yup.string().min(2,"Enter minimum 2 characters").required("Required"),

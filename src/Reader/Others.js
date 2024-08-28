@@ -52,6 +52,21 @@ function Others({ url }) {
           .map((a) => {
             const dateTime = new Date(a.date);
             const timeString = dateTime.toLocaleTimeString();
+
+            // const dateTimes = new Date(data.date);
+  const now = new Date();
+
+  // Calculate the difference in milliseconds
+  const timeDifference = now - dateTime;
+
+  // Convert the difference to hours
+  const hoursDifference = timeDifference / (1000 * 60 * 60);
+
+  // Decide whether to show the date or time
+  const displayValue =
+    hoursDifference >= 24
+      ? dateTime.toLocaleDateString() // Display date if more than 24 hours
+      : dateTime.toLocaleTimeString(); // Display time otherwise
             return (
               <div className="row" style={{ padding: "20px" }} key={a._id}>
                 <div className="col-md-5 readre_politics_image">
@@ -99,9 +114,19 @@ function Others({ url }) {
                     <button className="ri-map-pin-line" id="reader_location">
                       {a.location}
                     </button>
-                    <button className="ri-map-pin-time-line" id="reader_time">
-                      {timeString}
-                    </button>
+                    {
+          hoursDifference>=24?(
+            <button className="ri-calendar-2-line" id="reader_time">
+            {displayValue}
+           </button>
+   
+          ):(
+            <button className="ri-map-pin-time-line" id="reader_time">
+            {displayValue}
+           </button>
+   
+          )
+        }
                   </div>
                 </div>
               </div>

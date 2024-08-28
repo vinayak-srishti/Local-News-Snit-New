@@ -20,6 +20,11 @@ function Readersignin() {
             alert("Pincode must have 6 digits");
             return;
           }
+          if (!/^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{5,}$/.test(values.password)) {
+            alert("Password must have the specified criteria");
+            return;
+          }
+      
 
         axiosInstance.post(`/readersignup`, values)
             .then((res) => {

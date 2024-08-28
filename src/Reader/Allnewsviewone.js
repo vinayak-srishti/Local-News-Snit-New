@@ -139,6 +139,23 @@ function Allnewsviewone({ url }) {
       });
   }, [rid]);
 
+
+  //time date calculation
+  const dateTimes = new Date(data.date);
+  const now = new Date();
+
+  // Calculate the difference in milliseconds
+  const timeDifference = now - dateTimes;
+
+  // Convert the difference to hours
+  const hoursDifference = timeDifference / (1000 * 60 * 60);
+
+  // Decide whether to show the date or time
+  const displayValue =
+    hoursDifference >= 24
+      ? dateTimes.toLocaleDateString() // Display date if more than 24 hours
+      : dateTimes.toLocaleTimeString(); // Display time otherwise
+
   return (
     <div className="container reader_viewone" style={{ margin: "30px" }}>
       <div className="row">
@@ -298,9 +315,19 @@ function Allnewsviewone({ url }) {
         <button className="ri-map-pin-line" id="reader_location">
           {data.location}
         </button>
-        <button className="ri-map-pin-time-line" id="reader_time">
-          {timeString}
-        </button>
+        {
+          hoursDifference>=24?(
+            <button className="ri-calendar-2-line" id="reader_time">
+            {displayValue}
+           </button>
+   
+          ):(
+            <button className="ri-map-pin-time-line" id="reader_time">
+            {displayValue}
+           </button>
+   
+          )
+        }
       </div>
       <Modal
         show={showMenuModal}

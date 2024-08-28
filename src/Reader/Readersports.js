@@ -44,6 +44,20 @@ function Readersports({url}) {
                     const timeString = dateTime.toLocaleTimeString();
                     console.log(a.image.filename);
                     console.log(`${url}/${a.image.filename}`);
+                    // const dateTime = new Date(data.date);
+  const now = new Date();
+
+  // Calculate the difference in milliseconds
+  const timeDifference = now - dateTime;
+
+  // Convert the difference to hours
+  const hoursDifference = timeDifference / (1000 * 60 * 60);
+
+  // Decide whether to show the date or time
+  const displayValue =
+    hoursDifference >= 24
+      ? dateTime.toLocaleDateString() // Display date if more than 24 hours
+      : dateTime.toLocaleTimeString(); // Display time otherwise
                return(
                 
     <div className='row'>
@@ -64,7 +78,19 @@ function Readersports({url}) {
               <button type='button' className='ri-thumb-down-line'> </button> */}
               <button className='ri-user-line' id='reader_usename'>{a?.contributorid?.firstname}</button>
               <button className='ri-map-pin-line' id='reader_location'>{a.location}</button>
-              <button className='ri-map-pin-time-line' id='reader_time'>{timeString}</button>
+              {
+          hoursDifference>=24?(
+            <button className="ri-calendar-2-line" id="reader_time">
+            {displayValue}
+           </button>
+   
+          ):(
+            <button className="ri-map-pin-time-line" id="reader_time">
+            {displayValue}
+           </button>
+   
+          )
+        }
 
             </div>
       </div>
