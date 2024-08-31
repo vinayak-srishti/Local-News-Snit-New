@@ -9,8 +9,8 @@ import Privacyadvertiser from './Privacyadvertiser'
 import Advertisementviewsingleadds from './Advertisementviewsingleadds'
 
 function Advertisermain({data}) {
-  const url = "http://localhost:4004";
-  // const url="http://hybrid.srishticampus.in:4003/"
+  // const url = "http://localhost:4004";
+  const url="http://hybrid.srishticampus.in:4003/"
 
 
   return (
