@@ -83,8 +83,8 @@ import ContributerViewrejectednews from "./Contributor/ContributerViewrejectedne
 
 function App() {
   //local
-  // const url = "http://localhost:4004";
-  const url="http://hybrid.srishticampus.in:4003/"
+  const url = "http://localhost:4004";
+  // const url="http://hybrid.srishticampus.in:4003/"
  
   return (
     <BrowserRouter 
