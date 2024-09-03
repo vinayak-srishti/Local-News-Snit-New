@@ -39,6 +39,10 @@ function Advertisersignin() {
 const navigate=useNavigate()
     const onSubmit=(a)=>{
         a.preventDefault()
+        if (!/^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{5,}$/.test(values.password)) {
+          alert("Password must have the specified criteria");
+          return;
+        }
         axiosInstance.post(`/advertisersignup`,values,{
           headers: {
             "Content-Type": "multipart/form-data",
@@ -61,7 +65,7 @@ const navigate=useNavigate()
           })
           .catch((err) => {
             console.log(err);
-            alert("errorrr")
+            alert(err.response.data.msg)
           })
     
     }
